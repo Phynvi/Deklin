@@ -19,6 +19,7 @@
 *.tar.gz
 *.rar
 *.dat2
+*.idx0
 *.idx1
 *.idx2
 *.idx3
@@ -42,6 +43,7 @@
 *.idx21
 *.idx22
 *.idx23
+*.idx24
 *.idx25
 *.idx26
 *.idx27
