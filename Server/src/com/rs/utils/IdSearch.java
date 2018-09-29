@@ -6,7 +6,6 @@ import com.rs.cache.loaders.ObjectDefinitions;
 import com.rs.game.item.Item;
 import com.rs.game.player.Player;
 import com.rs.utils.stringUtils.TextUtils;
-import com.sun.istack.internal.Nullable;
 
 import java.util.ArrayList;
 
@@ -15,7 +14,7 @@ import java.util.ArrayList;
  */
 public class IdSearch {
 
-    public static ArrayList<String> searchForNpc(String keyword, boolean addEffects, int limit, @Nullable Player
+    public static ArrayList<String> searchForNpc(String keyword, boolean addEffects, int limit, Player
             player) {
         ArrayList<String> items = new ArrayList<>();
         for (int i = 0; i < NPCDefinitions.getNPCDefinitionsSize(); i++) {
@@ -46,7 +45,7 @@ public class IdSearch {
                 + " results for the item " + TextUtils.formatPlayerNameForDisplay(itemName) + ".");
     }
 
-    public static ArrayList<String> searchForItem(String keyword, boolean addEffects, int limit, @Nullable Player
+    public static ArrayList<String> searchForItem(String keyword, boolean addEffects, int limit, Player
             player) {
         ArrayList<String> items = new ArrayList<>();
         for (int i = 0; i < ItemDefinitions.getItemDefinitionsSize(); i++) {
@@ -78,7 +77,7 @@ public class IdSearch {
                 + " results for the item " + TextUtils.formatPlayerNameForDisplay(itemName) + ".");
     }
 
-    private static ArrayList<String> searchForObject(String keyword, boolean addEffects, int limit, @Nullable Player
+    private static ArrayList<String> searchForObject(String keyword, boolean addEffects, int limit, Player
             player) {
         ArrayList<String> items = new ArrayList<>();
         for (int i = 0; i < ObjectDefinitions.getObjectDefinitionsSize(); i++) {

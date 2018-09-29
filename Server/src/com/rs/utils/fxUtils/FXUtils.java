@@ -1,6 +1,5 @@
 package com.rs.utils.fxUtils;
 
-import com.sun.istack.internal.Nullable;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
@@ -70,7 +69,7 @@ public class FXUtils {
     /**
      * Make a text field only accept numeric input
      */
-    public static void setNumericInput(TextField input, @Nullable String defaultValue) {
+    public static void setNumericInput(TextField input, String defaultValue) {
         input.textProperty().addListener((observable, oldValue, newValue) -> {
             if (!newValue.matches("\\d*")) {
                 input.setText(newValue.replaceAll("[^\\d]", ""));

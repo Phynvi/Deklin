@@ -2,7 +2,6 @@ package com.rs.game.player.dialogues;
 
 import com.rs.cache.loaders.NPCDefinitions;
 import com.rs.game.player.Player;
-import com.sun.istack.internal.Nullable;
 
 import java.security.InvalidParameterException;
 import java.util.LinkedList;
@@ -103,7 +102,7 @@ public abstract class Dialogue {
      * @param title          title of the interface
      * @param values         the lines
      */
-    private void sendDialogueText(int interfaceId, int componentStart, boolean hasTitle, @Nullable String title,
+    private void sendDialogueText(int interfaceId, int componentStart, boolean hasTitle, String title,
                                   String... values) {
         int compId = 0;
         if (hasTitle) {
