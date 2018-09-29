@@ -1,5 +1,6 @@
 package com.rs.utils.game.itemUtils;
 
+import com.rs.Settings;
 import com.rs.game.item.Item;
 import org.pmw.tinylog.Logger;
 
@@ -12,8 +13,8 @@ import java.util.HashMap;
 public class ItemExamines {
 
 	private final static HashMap<Integer, String> itemExamines = new HashMap<>();
-	private final static String PACKED_PATH = "data/items/packedExamines.e";
-	private final static String UNPACKED_PATH = "data/items/unpackedExamines.txt";
+	private final static String PACKED_PATH = Settings.DATA_PATH + "items/packedExamines.e";
+	private final static String UNPACKED_PATH = Settings.DATA_PATH + "items/unpackedExamines.txt";
 
 	public static void init() {
 		if (new File(PACKED_PATH).exists())

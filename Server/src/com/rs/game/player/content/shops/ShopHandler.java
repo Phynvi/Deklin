@@ -1,6 +1,7 @@
 package com.rs.game.player.content.shops;
 
 import com.google.gson.reflect.TypeToken;
+import com.rs.Settings;
 import com.rs.game.actionHandling.Handler;
 import com.rs.game.player.Player;
 import com.rs.utils.files.JSONParser;
@@ -17,7 +18,7 @@ public class ShopHandler implements Handler {
 
     private static CopyOnWriteArrayList<Shop> shops = new CopyOnWriteArrayList<>();
 
-    private static final String SAVE_PATH = "data/items/shop.json";
+    private static final String SAVE_PATH = Settings.DATA_PATH + "items/shop.json";
 
     @SuppressWarnings("unchecked")
     public static void init() {

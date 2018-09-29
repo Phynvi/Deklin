@@ -12,8 +12,8 @@ public final class Settings {
      * Server Settings
      */
     public static final String SERVER_NAME = "Divergent";
-    public static final String CACHE_PATH = "data/cache/";
-    public static final String DATA_PATH = "data/";
+    public static final String CACHE_PATH = System.getProperty("user.dir") + "\\Server\\data\\cache\\";
+    public static final String DATA_PATH = System.getProperty("user.dir") + "\\Server\\data\\";
 
     public static final int PORT_ID = 43594;
     public static final int RECEIVE_DATA_LIMIT = 7500;

@@ -41,14 +41,14 @@ public final class Launcher {
         if (args.length >= 1) {
             Settings.DEBUG = Boolean.parseBoolean(args[0]);
         }
-
+        System.out.println(System.getProperty("user.dir"));
         Logger.info("Launching server...");
         NpcDataLoader.init();
         Cache.init();
         ItemEquipIds.init();
         Huffman.init();
         MapAreas.init();
-        NpcDrops.init();
+        //NpcDrops.init();
         ObjectSpawning.init();
         NpcSpawning.init();
         ItemExamines.init();

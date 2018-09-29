@@ -1,5 +1,6 @@
 package com.rs.utils;
 
+import com.rs.Settings;
 import com.rs.game.world.WorldTile;
 import org.pmw.tinylog.Logger;
 
@@ -12,7 +13,7 @@ import java.util.HashMap;
 public final class MapAreas {
 
 	private final static HashMap<Integer, int[]> mapAreas = new HashMap<>();
-	private final static String PACKED_PATH = "data/map/packedMapAreas.ma";
+	private final static String PACKED_PATH = Settings.DATA_PATH + "map/packedMapAreas.ma";
 	private final static Object lock = new Object();
 
 	public static void init() {

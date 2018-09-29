@@ -1,6 +1,7 @@
 package com.rs.utils.game.itemUtils;
 
 import com.google.gson.reflect.TypeToken;
+import com.rs.Settings;
 import com.rs.utils.files.JSONParser;
 
 import java.util.HashMap;
@@ -23,7 +24,7 @@ public final class ItemBonuses {
 
     @SuppressWarnings("unchecked")
     private static void loadItemBonuses() {
-        itemBonuses = (HashMap<Integer, int[]>) JSONParser.load("data/items/bonuses.json", new
+        itemBonuses = (HashMap<Integer, int[]>) JSONParser.load(Settings.DATA_PATH + "items/bonuses.json", new
                 TypeToken<HashMap<Integer, int[]>>() {
         }.getType());
 

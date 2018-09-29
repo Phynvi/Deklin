@@ -1,6 +1,7 @@
 package com.rs.game.player.quests;
 
 import com.google.gson.reflect.TypeToken;
+import com.rs.Settings;
 import com.rs.game.actionHandling.Handler;
 import com.rs.game.player.Player;
 import com.rs.game.world.WorldObject;
@@ -90,7 +91,7 @@ public class QuestHandler implements Handler {
     @Override
     public void register() {
         //noinspection unchecked
-        questDataMap = (HashMap<Integer, QuestData>) JSONParser.load("data/quests/questsMap.json", new
+        questDataMap = (HashMap<Integer, QuestData>) JSONParser.load(Settings.DATA_PATH + "quests/questsMap.json", new
                 TypeToken<HashMap<Integer, QuestData>>() {
         }.getType());
         try {

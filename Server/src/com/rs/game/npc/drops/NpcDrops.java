@@ -1,6 +1,7 @@
 package com.rs.game.npc.drops;
 
 import com.google.gson.reflect.TypeToken;
+import com.rs.Settings;
 import com.rs.game.item.Item;
 import com.rs.game.npc.Drop;
 import com.rs.game.player.Player;
@@ -18,7 +19,7 @@ import java.util.HashSet;
  */
 public class NpcDrops {
 
-    private static final String DROP_PATH = "data/npcs/drops.dat";
+    private static final String DROP_PATH = Settings.DATA_PATH + "npcs/drops.dat";
 
     private static HashSet<DropTable> dropTables = new HashSet<>();
     private static HashMap<Integer, DropTable> npcDrops = new HashMap<>();

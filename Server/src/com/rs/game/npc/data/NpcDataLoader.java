@@ -1,6 +1,7 @@
 package com.rs.game.npc.data;
 
 import com.google.gson.reflect.TypeToken;
+import com.rs.Settings;
 import com.rs.utils.files.JSONParser;
 
 import java.util.HashMap;
@@ -21,7 +22,7 @@ public class NpcDataLoader {
 
     @SuppressWarnings("unchecked")
     private static void loadNpcData() {
-        dataHashMap = (HashMap<Integer, NpcData>) JSONParser.load("data/npcs/npcData.json", new
+        dataHashMap = (HashMap<Integer, NpcData>) JSONParser.load(Settings.DATA_PATH + "npcs/npcData.json", new
                 TypeToken<HashMap<Integer, NpcData>>() {
         }.getType());
     }
