@@ -47,8 +47,8 @@ public class Callback_Sub1 extends Callback
 	
 	@SuppressWarnings("deprecation")
 	final void method82(boolean bool, Component component, byte b) {
-		WComponentPeer wcomponentpeer = (WComponentPeer) component.getPeer();
-		int i = wcomponentpeer.getTopHwnd();
+		//WComponentPeer wcomponentpeer = (WComponentPeer) component.getPeer();
+		int i = 0;
 		if (i != anInt2 || bool != aBoolean3) {
 			if (!aBoolean5) {
 				anInt4 = User32.LoadCursor(0, 32512);

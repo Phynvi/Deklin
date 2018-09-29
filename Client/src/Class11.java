@@ -19,8 +19,8 @@ public class Class11 implements IEnumModesCallback
 	@SuppressWarnings("deprecation")
 	final void method191(Frame frame, int i, int i_0_, int i_1_, int i_2_, int i_3_) {
 		frame.setVisible(true);
-		WComponentPeer wcomponentpeer = (WComponentPeer) frame.getPeer();
-		int i_4_ = wcomponentpeer.getHwnd();
+		//WComponentPeer wcomponentpeer = (WComponentPeer) frame.getPeer();
+		int i_4_ = 0;
 		User32.SetWindowLong(i_4_, -16, -2147483648);
 		User32.SetWindowLong(i_4_, -20, 8);
 		if (i_2_ > 105) {
