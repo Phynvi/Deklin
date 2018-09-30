@@ -4,6 +4,7 @@
     <root id="archive" name="Client.jar">
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$USER_HOME$/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/Client/META-INF/MANIFEST.MF" />
       </element>
       <element id="module-output" name="Client" />
       <element id="extracted-dir" path="$PROJECT_DIR$/Client/lib/graphics.jar" path-in-jar="/" />

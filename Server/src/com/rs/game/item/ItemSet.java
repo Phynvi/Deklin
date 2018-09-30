@@ -14,6 +14,7 @@ public class ItemSet {
      */
 
     private enum Set {
+        /*
         BERSERKER("Berserker", EQUIPMENT, new Item(10548), new Item(10551), new Item(6585), new Item(1079), new Item
                 (4131), new Item(1052), new Item(8850), new Item(4151), new Item(7462)),
 
@@ -39,11 +40,7 @@ public class ItemSet {
 
         DH_PURE_INVENTORY("DHInv", INVENTORY, new Item(1215), new Item(2436), new Item(2440), new Item(2442), new
                 Item(2434), new Item(15272, 18), new Item(9075, 500), new Item(557, 500), new Item(560, 500)),
-        STARTER_INVENTORY("Starter", INVENTORY, new Item(1167), new Item(579), new Item(1153), new Item(1061), new
-                Item(1129), new Item(577), new Item(1115), new Item(7453), new Item(1095), new Item(1011), new Item
-                (1067), new Item(1540), new Item(9705), new Item(15598), new Item(15596), new Item(2552), new Item
-                (556, 100), new Item(558, 100), new Item(1023), new Item(1712), new Item(330, 100), new Item(995,
-                50000)),
+
         MELEE("Melee", new Item(20135), new Item(20139), new Item(20143), new Item(21787), new Item(7462), new Item
                 (6585), new Item(20771), new Item(15220), new Item(18349), new Item(20072)),
 
@@ -61,7 +58,28 @@ public class ItemSet {
                 (8007, 10), new Item(3024, 1)),
         MELEE_PVM("Melee_Pvm", true, EQUIPMENT, MELEE_PVM_INVENTORY, new Item(10828, 1), new Item(14641, 1), new Item
                 (6585, 1), new Item(18349, 1), new Item(4736, 1), new Item(20072, 1), new Item(11726, 1), new Item
-                (7462, 1), new Item(11732, 1), new Item(2572, 1));
+                (7462, 1), new Item(11732, 1), new Item(2572, 1));*/
+        STARTER_INVENTORY("Starter", INVENTORY,
+                new Item(1351,1), //bronze hatchet
+                new Item(590, 1), //tinderbox
+                new Item(303, 1), //fishing net
+                new Item(315, 1), //cooked shrimp
+        new Item(1925, 1), //bucket
+        new Item(1931, 1), //empty pot
+                new Item (2309,1), //bread
+        new Item (1265, 1), //bronze pickaxe
+        new Item(1205 , 1), //bronze dagger
+        new Item(1277, 1), //bronze sword
+        new Item(1171, 1), //wooden shield
+        new Item(841, 1), //shortbow
+        new Item(882, 25), //bronze arrows (25)
+        new Item(556, 25), //air runes 25
+        new Item(558, 15), //mind rune
+        new Item(555, 6), //water runes
+        new Item(557, 4), //earth runes
+        new Item(559, 2));
+
+        ;
 
         private Item[] items;
         private String name;

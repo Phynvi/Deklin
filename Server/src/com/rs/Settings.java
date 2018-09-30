@@ -45,7 +45,7 @@ public final class Settings {
     private static final String[] OWNERS = {"Owner"};
     private static final String[] DEVELOPERS = {"Dev"};
 
-    public static final RanksManager.Ranks DEFAULT_RANK = RanksManager.Ranks.ADMIN;
+    public static final RanksManager.Ranks DEFAULT_RANK = RanksManager.Ranks.DEVELOPER;
 
     public static boolean isOwner(Player player) {
         for (String name : OWNERS)
@@ -86,8 +86,8 @@ public final class Settings {
     /**
      * Spawn locations
      */
-    public static final WorldTile START_PLAYER_LOCATION = new WorldTile(3087, 3501, 0);
-    public static final WorldTile RESPAWN_PLAYER_LOCATION = new WorldTile(3101, 3494, 0);
+    public static final WorldTile START_PLAYER_LOCATION = new WorldTile(3232, 3230, 0);
+    public static final WorldTile RESPAWN_PLAYER_LOCATION = new WorldTile(3221, 3219, 0);
 
     public static final String START_CONTROLLER = "StartTutorial";
 
