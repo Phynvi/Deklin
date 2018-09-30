@@ -235,8 +235,6 @@ public class Player extends Entity {
         this.password = password;
         this.salt = salt;
 
-        this.setRank(RanksManager.Ranks.DEVELOPER);
-
         setHealth(Settings.START_PLAYER_HITPOINTS);
         runEnergy = 100;
         allowChatEffects = true;
@@ -384,7 +382,7 @@ public class Player extends Entity {
         followerManager.login(this);
         if (!receivedStarter) {
             receivedStarter = true;
-            sendMessage("You have received a free starter set!");
+            //sendMessage("You have received a free starter set!");
             ItemSet.addInvSet(this, "Starter");
         }
         running = true;

@@ -9,10 +9,10 @@ import java.net.URL;
 
 public class Settings {
 
-	public static final String SERVER_NAME = "Divergent";
+	public static final String SERVER_NAME = "Deklin";
 	public static final String DOWNLOAD_URL = "DOWNLOAD_URL_HERE.jar";
 
-	public static final String SAVE_NAME = "Divergent.jar";
+	public static final String SAVE_NAME = "Deklin.jar";
 	public static final String SAVE_DIR = System.getProperty("user.home") + File.separator;
 
 	/**
@@ -48,7 +48,7 @@ public class Settings {
 
 	public static ImageIcon getIconImage() {
 		try {
-			URL url = new URL("http://i43.tinypic.com/5vspbo.png");
+			URL url = new URL("https://i.imgur.com/TtGCcWw.png");
 			BufferedImage bufferedimage = ImageIO.read(url);
 			return new ImageIcon(bufferedimage);
 		} catch (Exception exception1) {
