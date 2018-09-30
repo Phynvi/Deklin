@@ -647,6 +647,7 @@ public final class ItemDefinitions {
 
     public static int getItemDefinitionsSize() {
         int lastArchiveId = Cache.STORE.getIndexes()[19].getLastArchiveId();
+        //System.out.println("lastArchiveId = " + lastArchiveId);
         return lastArchiveId * 256 + Cache.STORE.getIndexes()[19].getValidFilesCount(lastArchiveId);
     }
 

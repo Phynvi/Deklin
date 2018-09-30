@@ -12,8 +12,16 @@ public final class Settings {
      * Server Settings
      */
     public static final String SERVER_NAME = "Divergent";
-    public static final String CACHE_PATH = System.getProperty("user.dir") + "\\Server\\data\\cache\\";
-    public static final String DATA_PATH = System.getProperty("user.dir") + "\\Server\\data\\";
+    public static String CACHE_PATH = System.getProperty("user.dir") + "\\Server\\data\\cache\\";
+    public static String DATA_PATH = System.getProperty("user.dir") + "\\Server\\data\\";
+
+    static {
+        if (!System.getProperty("os.name").startsWith("Windows")) {
+            // if the host machine is not running Windows, replace \ with /
+            CACHE_PATH = CACHE_PATH.replace("\\", "/");
+            DATA_PATH = DATA_PATH.replace("\\", "/");
+        }
+    }
 
     public static final int PORT_ID = 43594;
     public static final int RECEIVE_DATA_LIMIT = 7500;

@@ -16,6 +16,7 @@ public final class ItemEquipIds {
 				itemsDefinitions.put(itemId, equipId++);
 			}
 		}
+		//System.out.println("Got here");
 	}
 
 	public static int getEquipId(int itemId) {
