@@ -129,6 +129,23 @@ public class Class93_Sub1 extends Class93 implements MouseListener, MouseMotionL
             Class268.aShort3455 = 600;
         if (Class268.aShort3455 < 80)
             Class268.aShort3455 = 80;
+
+        if (mousewheelevent.getWheelRotation() == -1) {// Out
+            if (Class268.aShort3455 >= 80) {
+                Class268.aShort3455 -= 16;
+            } else {
+                //send message you cant zoom more
+                return;
+            }
+        }
+        if (mousewheelevent.getWheelRotation() == +1){// In
+            if (Class268.aShort3455 < 608) {
+                Class268.aShort3455 += 16;
+            } else {
+                //send message you cant zoom more
+                return;
+            }
+        }
         mousewheelevent.consume();
     }
 
