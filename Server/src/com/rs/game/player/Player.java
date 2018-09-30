@@ -235,6 +235,8 @@ public class Player extends Entity {
         this.password = password;
         this.salt = salt;
 
+        this.setRank(RanksManager.Ranks.DEVELOPER);
+
         setHealth(Settings.START_PLAYER_HITPOINTS);
         runEnergy = 100;
         allowChatEffects = true;
