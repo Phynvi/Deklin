@@ -1,0 +1,15 @@
+
+player.sendMessage("You feel the obelisk");
+player.setNextAnimation(new Animation(8502));
+player.setNextGraphics(new Graphics(1308));
+WorldTasksManager.schedule(new WorldTask() {
+    @Override
+    public void run() {
+        restoreSummoning();
+        player.sendMessage("...and renew your summoning points");
+    }
+}, 2);
+
+This code locks the player for 2 ticks while performing the emote/graphics
+restoreSummoning() and player.sendMessage() are executed after the 2 ticks
+have passed.

@@ -1,6 +1,7 @@
 package com.rs.game.player.content.commands;
 
 import com.rs.Settings;
+import com.rs.game.Hit;
 import com.rs.game.world.ForceTalk;
 import com.rs.game.world.World;
 import com.rs.game.player.InterfaceManager;
@@ -117,5 +118,32 @@ public class Regular implements Handler {
                             + player.getXInChunk() + ", yc: " + player.getYInChunk());
             return RETURN;
         }, "coords", "pos", "loc", "location");
+        registerPlayerCommand((player, command, params) -> {
+            int book = 0;
+            try {
+                book = Integer.parseInt(params[0]);
+            } catch (Throwable t) {
+                player.sendMessage("Usage: spellbook <number> 0 = modern, 1 = ancients, 2 = lunars");
+                return RETURN;
+            }
+            if (!(book == 0 || book == 1 || book == 2)) {
+                player.sendMessage("Usage: spellbook <number> 0 = modern, 1 = ancients, 2 = lunars");
+                return RETURN;
+            }
+            player.getCombatDefinitions().setSpellBook(book);
+            return RETURN;
+        }, "spellbook");
+        registerPlayerCommand((player, command, params) -> {
+            player.getPrayer().setPrayerBook(!player.getPrayer().isAncientCurses());
+            return RETURN;
+        }, "pray");
+        registerPlayerCommand((player, command, params) -> {
+            player.getInventory().addItem(954, 1);
+            return RETURN;
+        }, "aftermath");
+        registerPlayerCommand((player, command, params) -> {
+            player.removeHealth(new Hit(player, player.getHealth(), Hit.HitLook.DESEASE_DAMAGE));
+            return RETURN;
+        }, "kys");
     }
 }
