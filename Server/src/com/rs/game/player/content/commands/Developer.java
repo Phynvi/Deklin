@@ -9,6 +9,7 @@ import com.rs.game.player.content.interfaces.Teleportation;
 import com.rs.game.player.dialogues.Dialogue;
 import com.rs.game.player.dialogues.impl.base.Banker;
 import com.rs.game.player.dialogues.impl.base.SimpleMessage;
+import com.rs.game.player.dialogues.impl.base.TestDialogue;
 import com.rs.game.player.info.RanksManager;
 import com.rs.game.player.quests.QuestHandler;
 import com.rs.game.tasks.WorldTask;
@@ -113,7 +114,7 @@ public class Developer implements Handler {
         }, "loopinterfaces");
 
         registerDeveloperCommand((player, command, params) -> {
-            Dialogue testdialogue = new SimpleMessage();
+            Dialogue testdialogue = new TestDialogue();
             player.getDialogueManager().startDialogue(testdialogue);
             return RETURN;
         }, "startdialogue");
