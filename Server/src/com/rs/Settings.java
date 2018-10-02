@@ -11,7 +11,7 @@ public final class Settings {
     /**
      * Server Settings
      */
-    public static final String SERVER_NAME = "Divergent";
+    public static final String SERVER_NAME = "Deklin";
     public static String CACHE_PATH = System.getProperty("user.dir") + "\\Server\\data\\cache\\";
     public static String DATA_PATH = System.getProperty("user.dir") + "\\Server\\data\\";
 

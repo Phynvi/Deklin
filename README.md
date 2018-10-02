@@ -8,8 +8,12 @@ A 667 (remake) rsps
 2. [ Run the client ](#runclient)
 3. [ Useful Information ](#usefulinformation)
 4. [ Server information ](#usefulinformationserver)
-5. [ Client information ](#usefulinformationclient)
-5. [ Mouse events ](#mouseclickeventsclient)
+    
+    4.1 [ Dialogue information ](#usefulinformationserverdialogue)
+    
+6. [ Client information ](#usefulinformationclient)
+
+    5.1 [ Mouse events ](#mouseclickeventsclient)
 
 <a name="runserver"></a>
 ## Run the Server
@@ -32,8 +36,12 @@ Run Loader class
 <a name="usefulinformationserver"></a>
 ### Server
 
+<a name="usefulinformationserverdialogue"></a>
 #### Dialogues
 
+##### Creating dialogue
+
+##### Calling dialogue
 A dialogue can be created by using  
 
     Dialogue testdialogue = new SimpleMessage();
@@ -45,6 +53,14 @@ Then, to run the dialogue type the following:
     player.getDialogueManager().startDialogue(testdialogue);
     
 As a developer you can also run the "startdialogue" command to see this in action
+
+##### Binding dialogue to npc
+Server\src\com\rs\game\actionHandling\handlers\NPCHandler.java
+
+###### Quest Implementation
+
+
+###### Other
     
 <a name="usefulinformationclient"></a>
 ### Client

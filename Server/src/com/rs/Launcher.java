@@ -48,7 +48,7 @@ public final class Launcher {
         ItemEquipIds.init();
         Huffman.init();
         MapAreas.init();
-        //NpcDrops.init();
+        NpcDrops.init();
         ObjectSpawning.init();
         NpcSpawning.init();
         ItemExamines.init();
