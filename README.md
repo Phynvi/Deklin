@@ -32,6 +32,20 @@ Run Loader class
 <a name="usefulinformationserver"></a>
 ### Server
 
+#### Dialogues
+
+A dialogue can be created by using  
+
+    Dialogue testdialogue = new SimpleMessage();
+
+Where "SimpleMessage" is a class extending Dialogue, check it for reference.     
+
+Then, to run the dialogue type the following: 
+
+    player.getDialogueManager().startDialogue(testdialogue);
+    
+As a developer you can also run the "startdialogue" command to see this in action
+    
 <a name="usefulinformationclient"></a>
 ### Client
 

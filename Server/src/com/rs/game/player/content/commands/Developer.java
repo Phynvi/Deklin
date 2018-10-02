@@ -6,6 +6,9 @@ import com.rs.game.actionHandling.Handler;
 import com.rs.game.item.Item;
 import com.rs.game.player.content.Notes;
 import com.rs.game.player.content.interfaces.Teleportation;
+import com.rs.game.player.dialogues.Dialogue;
+import com.rs.game.player.dialogues.impl.base.Banker;
+import com.rs.game.player.dialogues.impl.base.SimpleMessage;
 import com.rs.game.player.info.RanksManager;
 import com.rs.game.player.quests.QuestHandler;
 import com.rs.game.tasks.WorldTask;
@@ -14,10 +17,12 @@ import com.rs.game.world.Region;
 import com.rs.game.world.World;
 import com.rs.game.world.WorldObject;
 import com.rs.utils.stringUtils.TextUtils;
+import javafx.beans.property.SimpleMapProperty;
 
 import static com.rs.game.actionHandling.HandlerManager.HandlerConstants.*;
 import static com.rs.game.actionHandling.HandlerManager.registerDeveloperCommand;
 import static com.rs.game.actionHandling.HandlerManager.registerInterfaceAction;
+import static com.rs.game.actionHandling.HandlerManager.registerNpcDialogue;
 
 /**
  * Created by Peng on 25.11.2016 15:22.
@@ -106,6 +111,12 @@ public class Developer implements Handler {
             }, 1, 1);
             return RETURN;
         }, "loopinterfaces");
+
+        registerDeveloperCommand((player, command, params) -> {
+            Dialogue testdialogue = new SimpleMessage();
+            player.getDialogueManager().startDialogue(testdialogue);
+            return RETURN;
+        }, "startdialogue");
 
         registerDeveloperCommand((player, command, params) -> {
             if (params.length + 1 < 3) {

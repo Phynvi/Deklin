@@ -19,7 +19,7 @@ public final class DialogueHandler {
      */
     @SuppressWarnings("unchecked")
     public static final void init() {
-        String fileLoc = "out/com/rs/game/player/dialogues/impl";
+        String fileLoc = "com/rs/game/player/dialogues/impl";
         String packageDir = "com.rs.game.player.dialogues.impl";
 
         try {
