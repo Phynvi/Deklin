@@ -45,7 +45,8 @@ public class ObjectSpawning {
                 clipped = rs.getBoolean("clipped");
                 World.spawnObject(new WorldObject(id, type, direction, x, y, plane), clipped);
             }
-            rs = statement.executeQuery("SELECT * FROM OBJECT_REMOVED");
+            String query = "SELECT * FROM OBJECT_REMOVED";
+            rs = statement.executeQuery(query);
             while (rs.next()) {
                 id = rs.getInt("id");
                 x = rs.getInt("x");

@@ -7,10 +7,7 @@ import com.rs.utils.Utils;
 import com.rs.utils.files.DatabaseUtils;
 import org.pmw.tinylog.Logger;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 /**
  * Created by Peng on 15.10.2016.
@@ -23,14 +20,17 @@ public class NpcSpawning {
     public static void init() {
         Connection connection = null;
         Statement statement = null;
+        ResultSet rs = null;
         try {
             connection = DatabaseUtils.openServerDatabase();
-            if (connection == null) return;
+            if (connection == null){
+                System.out.println("Connection was not created" );return;}
             statement = connection.createStatement();
-            statement.executeUpdate(
-                    "CREATE TABLE IF NOT EXISTS NPC_SPAWNS (ID_KEY INTEGER PRIMARY KEY AUTOINCREMENT, ID INT,"
-                    + " X INT, Y INT, PLANE INT, DIRECTION INT, RANDOM_WALK BOOLEAN, CUSTOM_NAME TEXT)");
-            ResultSet rs = statement.executeQuery("SELECT * FROM NPC_SPAWNS");
+            //statement.executeUpdate(
+            //        "CREATE TABLE IF NOT EXISTS NPC_SPAWNS (ID_KEY INTEGER PRIMARY KEY AUTOINCREMENT, ID INT,"
+            //        + " X INT, Y INT, PLANE INT, DIRECTION INT, RANDOM_WALK BOOLEAN, CUSTOM_NAME TEXT)");
+            String query = "SELECT * FROM NPC_SPAWNS";
+            rs = statement.executeQuery(query);
             int id, x, y, plane, direction;
             String customName;
             boolean randomWalk;

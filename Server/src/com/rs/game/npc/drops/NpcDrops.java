@@ -20,6 +20,7 @@ import java.util.HashSet;
 public class NpcDrops {
 
     private static final String DROP_PATH = Settings.DATA_PATH + "npcs/drops.dat";
+    private static final String RARE_DROP_PATH = Settings.DATA_PATH + "npcs/rareDrops.json";
 
     private static HashSet<DropTable> dropTables = new HashSet<>();
     private static HashMap<Integer, DropTable> npcDrops = new HashMap<>();
@@ -31,7 +32,7 @@ public class NpcDrops {
     public static void init() {
         loadTables();
         fillNpcDrops();
-        HashSet<Object> rares = (HashSet<Object>) JSONParser.load("data/npcs/rareDrops.json", new
+        HashSet<Object> rares = (HashSet<Object>) JSONParser.load(RARE_DROP_PATH, new
                 TypeToken<HashSet<Object>>() {
                 }.getType());
         if (rares != null) for (Object object : rares)
@@ -41,7 +42,7 @@ public class NpcDrops {
 
     @SuppressWarnings("unchecked")
     private static void loadTables() {
-        dropTables = (HashSet<DropTable>) SerializationUtils.deserialize("data/npcs/drops.dat");
+        dropTables = (HashSet<DropTable>) SerializationUtils.deserialize(DROP_PATH);
     }
 
     private static void fillNpcDrops() {
