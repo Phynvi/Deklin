@@ -8,6 +8,7 @@ import com.rs.game.player.content.Notes;
 import com.rs.game.player.content.interfaces.Teleportation;
 import com.rs.game.player.dialogues.Dialogue;
 import com.rs.game.player.dialogues.impl.base.Banker;
+import com.rs.game.player.dialogues.impl.base.GearSelection;
 import com.rs.game.player.dialogues.impl.base.SimpleMessage;
 import com.rs.game.player.dialogues.impl.base.TestDialogue;
 import com.rs.game.player.info.RanksManager;
@@ -118,6 +119,12 @@ public class Developer implements Handler {
             player.getDialogueManager().startDialogue(testdialogue);
             return RETURN;
         }, "startdialogue");
+
+        registerDeveloperCommand((player, command, params) -> {
+            Dialogue gearselection = new GearSelection();
+            player.getDialogueManager().startDialogue(gearselection);
+            return RETURN;
+        }, "gear");
 
         registerDeveloperCommand((player, command, params) -> {
             if (params.length + 1 < 3) {
