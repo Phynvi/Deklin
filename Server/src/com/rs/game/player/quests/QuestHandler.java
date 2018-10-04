@@ -52,10 +52,10 @@ public class QuestHandler implements Handler {
             if (quests.containsKey(data.getQuestId())) continue; //Don't send quest that can be completed
             switch (data.getConfigType()) {
                 case CONFIG_BY_FILE:
-                    player.getPackets().sendConfigByFile(data.getProgressConfig(), data.getCompletedConfig());
+                    player.getPackets().sendConfigByFile(data.getProgressConfig(), /*data.getCompletedConfig()*/ 0);
                     break;
                 case NORMAL_CONFIG:
-                    player.getPackets().sendConfig(data.getProgressConfig(), data.getCompletedConfig());
+                    player.getPackets().sendConfig(data.getProgressConfig(), 0/*data.getCompletedConfig()*/);
                     break;
             }
         }
