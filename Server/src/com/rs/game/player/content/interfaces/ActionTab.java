@@ -11,6 +11,7 @@ import com.rs.utils.stringUtils.TimeUtils;
 /**
  * @
  */
+/**
 public class ActionTab {
 
     private static boolean resizableScreen;
@@ -60,3 +61,4 @@ public class ActionTab {
     }
 
 }
+*/

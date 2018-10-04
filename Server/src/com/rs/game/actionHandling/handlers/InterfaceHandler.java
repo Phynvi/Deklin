@@ -99,6 +99,9 @@ public class InterfaceHandler extends ActionHandler<Integer> {
         player.getPackets().sendGlobalConfig(674, posHash);
     }
 
+    /*
+    @ Handles first click options on interfaces
+     */
     private static void handleButton1(final Player player, int interfaceId, int componentId, int slotId, int slotId2) {
         switch (interfaceId) {
             case 336:
