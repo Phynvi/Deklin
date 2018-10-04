@@ -1,5 +1,6 @@
 package com.rs.utils.files;
 
+import com.rs.Settings;
 import org.pmw.tinylog.Logger;
 
 import java.sql.Connection;
@@ -25,7 +26,7 @@ public class DatabaseUtils {
     private static Connection openDatabase(String path) {
         try {
             Class.forName("org.sqlite.JDBC");
-            return DriverManager.getConnection("jdbc:sqlite:data/" + path);
+            return DriverManager.getConnection("jdbc:sqlite:" + Settings.DATA_PATH + path);
         } catch (Exception e) {
             Logger.error(e);
             return null;
