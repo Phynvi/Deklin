@@ -6,7 +6,7 @@ import com.rs.game.world.ForceTalk;
 import com.rs.game.world.World;
 import com.rs.game.player.InterfaceManager;
 import com.rs.game.player.Player;
-import com.rs.game.player.content.interfaces.Teleportation;
+//import com.rs.game.player.content.interfaces.Teleportation;
 import com.rs.game.player.actions.combat.Magic;
 import com.rs.game.player.info.RanksManager;
 import com.rs.game.actionHandling.Handler;
@@ -37,7 +37,7 @@ public class Regular implements Handler {
             for (String param : params) {
                 cmd += param + " ";
             }
-            Teleportation.handleCommand(cmd.trim(), player);
+            //Teleportation.handleCommand(cmd.trim(), player);
             return RETURN;
         }, "tp");
         registerPlayerCommand((player, command, params) -> {

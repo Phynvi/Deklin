@@ -5,7 +5,7 @@ import com.rs.cache.loaders.NPCDefinitions;
 import com.rs.game.actionHandling.Handler;
 import com.rs.game.item.Item;
 import com.rs.game.player.content.Notes;
-import com.rs.game.player.content.interfaces.Teleportation;
+//import com.rs.game.player.content.interfaces.Teleportation;
 import com.rs.game.player.dialogues.Dialogue;
 import com.rs.game.player.dialogues.impl.base.Banker;
 import com.rs.game.player.dialogues.impl.base.GearSelection;
@@ -20,6 +20,9 @@ import com.rs.game.world.World;
 import com.rs.game.world.WorldObject;
 import com.rs.utils.stringUtils.TextUtils;
 import javafx.beans.property.SimpleMapProperty;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static com.rs.game.actionHandling.HandlerManager.HandlerConstants.*;
 import static com.rs.game.actionHandling.HandlerManager.registerDeveloperCommand;
@@ -45,7 +48,7 @@ public class Developer implements Handler {
         }, "listranks");
 
         registerDeveloperCommand((player, command, params)->{
-            Teleportation.openTeleportationInterface(player);
+            //Teleportation.openTeleportationInterface(player);
             return RETURN;
         },"resendteleinter");
 
@@ -81,6 +84,20 @@ public class Developer implements Handler {
             QuestHandler.sendConfigs(player);
             return RETURN;
         }, "testquests");
+
+        registerDeveloperCommand((player, command, params) -> {
+            player.getPackets().sendGlobalConfig(Integer.valueOf(params[0]), Integer.valueOf(params[1]));
+            return RETURN;
+        }, "globalconfig");
+
+        registerDeveloperCommand((player, command, params) -> {
+            int[] arr = new int[Math.abs(params.length - 4)];
+            for(int i = 4; i < params.length;i++) {
+                arr[i] = Integer.valueOf(params[i]);
+            }
+            player.getPackets().sendUnlockIComponentOptionSlots(Integer.valueOf(params[0]), Integer.valueOf(params[1]), Integer.valueOf(params[2]), Integer.valueOf(params[3]), arr);
+            return RETURN;
+        }, "sendUnlockIComponentOptionSlots".toLowerCase());
 
         registerDeveloperCommand((player, command, params) -> {
             Notes.addNote(player, new StringBuilder(TextUtils.combine(params)));

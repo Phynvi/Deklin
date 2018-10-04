@@ -3,8 +3,8 @@ package com.rs.game.player;
 import com.rs.game.actionHandling.HandlerManager;
 import com.rs.game.actionHandling.actions.ActionListener;
 import com.rs.game.gameUtils.events.PlayerEvent;
-import com.rs.game.player.content.interfaces.ActionTab;
-import com.rs.game.player.content.interfaces.Teleportation;
+//import com.rs.game.player.content.interfaces.ActionTab;
+//import com.rs.game.player.content.interfaces.Teleportation;
 import com.rs.game.player.info.RanksManager;
 
 import java.util.ArrayList;
@@ -41,7 +41,7 @@ public class InterfaceManager {
         MAGIC_BOOK(-1, 211, 97),
         PRAYER_BOOK(271, 210, 96),
         EQUIPMENT_TAB(387, 209, 95),
-        ACTION_TAB(930, 205, 91, ActionTab::sendTab),
+        //ACTION_TAB(930, 205, 91, ActionTab::sendTab),
         AREA_STATUS(745, 15, 15),
         /**
          * Pest control
@@ -120,11 +120,11 @@ public class InterfaceManager {
         }
         openInterfaces(CHAT_BOX, CHAT_OPTIONS, PRIVATE_CHAT, HEALTH_ORB, PRAYER_ORB, ENERGY_ORG, SUMMONING_ORG,
                 COMBAT_TAB, SKILLS_TAB, FRIENDS_TAB, FRIENDS_CHAT_TAB, CLAN_CHAT_TAB, EMOTES_TAB, MUSIC_TAB,
-                NOTES_TAB, LOGOUT_TAB, INVENTORY, EQUIPMENT_TAB, ACTION_TAB, SETTINGS, PRAYER_BOOK, AREA_STATUS);
+                NOTES_TAB, LOGOUT_TAB, INVENTORY, EQUIPMENT_TAB,  /*ACTION_TAB,*/SETTINGS, PRAYER_BOOK, AREA_STATUS, QUEST_TAB, TASKS_TAB);
         player.getPackets().sendInterface(true, 752, 9, 137);
 
         sendMagicBook();
-        Teleportation.openTeleportationInterface(player);
+        //Teleportation.openTeleportationInterface(player);
 
         player.getCombatDefinitions().sendUnlockAttackStylesButtons();
         player.getMusicsManager().unlockMusicPlayer();
