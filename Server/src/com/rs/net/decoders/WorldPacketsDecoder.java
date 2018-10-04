@@ -438,6 +438,8 @@ public final class WorldPacketsDecoder extends Decoder {
         int positionHash = stream.readIntV1();
         int y = positionHash >> 16; // y;
         int x = positionHash - (y << 16); // x
+        player.getPackets().sendMessage(101, String.format("Mousehash:{0}, mousebutton:{1}, time:{2}, position:{3}, (x:{4} and y:{5}", mouseHash, mouseButton, time
+        , positionHash, x, y), player);
         if (time <= 1 || x < 0 || x > player.getScreenWidth() || y < 0 || y > player.getScreenHeight()) return;
     }
 

@@ -131,6 +131,7 @@ public final class World {
      * @param player the player logging in
      */
     public static void sendLoginMessage(Player player) {
+        player.getPackets().sendUnlockIComponentOptionSlots(190, 18, 0, 180, 0, 1, 2, 3);
         player.sendMessage("Welcome to " + Settings.SERVER_NAME + "!");
         sendWorldMessage(RanksManager.getInfo(player) + "</col></shad><col=ff0033> has logged in!</col>");
     }

@@ -6,6 +6,7 @@ import com.rs.game.gameUtils.events.PlayerEvent;
 //import com.rs.game.player.content.interfaces.ActionTab;
 //import com.rs.game.player.content.interfaces.Teleportation;
 import com.rs.game.player.info.RanksManager;
+import com.rs.game.player.quests.QuestHandler;
 
 import java.util.ArrayList;
 import java.util.HashMap;
