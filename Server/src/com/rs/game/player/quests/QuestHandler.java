@@ -62,11 +62,18 @@ public class QuestHandler implements Handler {
     }
 
     static void sendQuestConfig(Player player, int questId, int value) {
+        System.out.println(String.format("Quest config " + player.getDisplayName() + "  " + questId + "  " + value));
         QuestData data = questDataMap.get(questId);
+        int val = 0;
+        if(value == data.getCompletedConfig())
+            val = data.getCompletedConfig();
+        if(value > 0 && val != data.getCompletedConfig())
+            val = data.getProgressConfig();
+        System.out.println(String.format("Quest config " + player.getDisplayName() + "  " + questId + "  " + value + " res: " + val));
         if (data != null) {
             if (data.getConfigType() == CONFIG_BY_FILE)
-                player.getPackets().sendConfigByFile(data.getProgressConfig(), value);
-            else player.getPackets().sendConfig(data.getProgressConfig(), data.getCompletedConfig());
+                player.getPackets().sendConfigByFile(data.getProgressConfig(), val);
+            else player.getPackets().sendConfig(data.getProgressConfig(), val);
         }
     }
 

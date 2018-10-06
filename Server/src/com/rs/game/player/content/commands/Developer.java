@@ -4,6 +4,7 @@ import com.rs.cache.loaders.ItemDefinitions;
 import com.rs.cache.loaders.NPCDefinitions;
 import com.rs.game.actionHandling.Handler;
 import com.rs.game.item.Item;
+import com.rs.game.player.Player;
 import com.rs.game.player.content.Notes;
 //import com.rs.game.player.content.interfaces.Teleportation;
 import com.rs.game.player.dialogues.Dialogue;
@@ -13,6 +14,7 @@ import com.rs.game.player.dialogues.impl.base.SimpleMessage;
 import com.rs.game.player.dialogues.impl.base.TestDialogue;
 import com.rs.game.player.info.RanksManager;
 import com.rs.game.player.quests.QuestHandler;
+import com.rs.game.player.quests.QuestManager;
 import com.rs.game.tasks.WorldTask;
 import com.rs.game.tasks.WorldTasksManager;
 import com.rs.game.world.Region;
@@ -155,6 +157,19 @@ public class Developer implements Handler {
             }
             return RETURN;
         }, "configbyfile");
+
+        registerDeveloperCommand((player, command, params) -> {
+            QuestManager q = player.getQuestManager();
+            int a =(q.getStage(Integer.parseInt(params[0])));
+            player.getPackets().sendMessage(101,String.valueOf(a), player);
+            return RETURN;
+        }, "questgetstate");
+
+        registerDeveloperCommand((player, command, params) -> {
+            QuestManager q = player.getQuestManager();
+            q.setStage(Integer.parseInt(params[0]), Integer.parseInt(params[1]));
+            return RETURN;
+        }, "questsetstate");
 
         registerDeveloperCommand((player, command, params) -> {
             for (Item item : player.getInventory().getItems().getItems()) {

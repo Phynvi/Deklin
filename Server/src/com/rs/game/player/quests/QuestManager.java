@@ -28,7 +28,9 @@ public class QuestManager {
         if (questProgress.containsKey(questId)) {
             if (questProgress.get(questId) < progress) questProgress.put(questId, progress);
         } else questProgress.put(questId, progress);
+        QuestHandler.sendQuestConfig(player, questId, progress);
     }
+
 
     public int getStage(int questId) {
         if (!questProgress.containsKey(questId)) return 0;
